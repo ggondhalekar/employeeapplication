@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>New employee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+  </head>
+  <body>
+	<form method="post" name="new_employee_form" id="new_employee_form" action="employeeList/create" role="form" style="width:500px;padding-left:50px;">
+	<div class="form-group">
+		<div class="row">
+			<label for="name">Employee Name </label>
+			<input type="text" class="form-control" id="name" name="name">
+		</div>
+		<div class="row">
+			<label for="name">Employee Phone </label>
+			<input type="text" class="form-control" id="phone" name="phone">
+		</div>	
+		<div class="row">
+			<label for="name">Employee email </label>
+			<input type="text" class="form-control" id="email" name="email">
+		</div>		
+	</div>
+	<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+</body>
+</html>

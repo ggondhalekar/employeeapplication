@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Employee List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+
+  </head>
+  <body>
+<a class="btn btn-primary" href="/employeeList/new">Add new Employee</a>
+<table class="table table-stripped" id="employee_list">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Emp Phone</th>
+			<th>Emp eMail</th>
+			<th>Action</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-th-each="employee : ${employeeList}">
+			<td class="name" data-th-text="${employee.name}"></td>
+			<td class="phone" data-th-text="${employee.phone}"></td>
+			<td class="email" data-th-text="${employee.email}"></td>
+			<td>
+				<a th:href="@{'/employeeList/{id}/delete'(id=${employee.id})}" class="delete" th:attr="name=${employee.name}">
+					<span class="fa-stack"><i class="glyphicon glyphicon-trash"></i>
+					</span>
+				</a>
+			</td>
+			<td>
+				<a th:href="@{'/employeeList/{id}/edit'(id=${employee.id})}" class="edit" th:attr="name=${employee.name}">
+					<span class="fa-stack"><i class="glyphicon glyphicon-edit"></i>
+					</span>
+				</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
